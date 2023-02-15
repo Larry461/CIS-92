@@ -1,2 +1,5 @@
-# CIS-92
-My course work for cis-92
+# CIS-92 Project
+
+This is the start of my project
+
+Larry Riley

@@ -5,4 +5,4 @@ RUN pip install django
 COPY mysite /mysite 
 WORKDIR /mysite 
 CMD python ./manage.py runserver 0.0.0.0:8000
-
+env port=8080

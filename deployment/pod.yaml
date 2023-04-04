@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod
+  labels:
+    function: webserver
+spec:
+  containers:
+  - name: httpd
+    image: ghcr.io/larry461/cis-92:milestone-4.0
+    ports:
+    - containerPort: 80
+    env:
+    - name: SECRET_KEY 
+      value: This is a random secret key
+   

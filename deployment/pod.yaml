@@ -7,12 +7,18 @@ metadata:
 spec:
   containers:
   - name: httpd
-    image: ghcr.io/larry461/cis-92:milestone-4.0
+    image: ghcr.io/larry461/cis-92:milestone-5.2
     ports:
     - containerPort: 80
     env:
-    - name: SECRET_KEY 
-      value: This is a random secret key
+    - name: DB_NAME 
+      value: "mysite"
+    - name: DB_USER 
+      value: postgres
+    - name: DB_PASSWORD 
+      value: "django"
+    - name: DB_HOST 
+      value: deployment/postgres-service.yaml      
     resources:
       requests:
         memory: "512Mi"

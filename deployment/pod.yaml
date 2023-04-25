@@ -11,6 +11,8 @@ spec:
     ports:
     - containerPort: 80
     env:
+    - name: PORT    
+      value: '80'
     - name: SECRET_KEY
       value: 'This is a random secret key'
     - name: DB_NAME 

@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysite
+  labels:
+    function: mysite
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      function: mysite
+  template:
+    metadata:
+      name: mysite
+      labels:
+        function: mysite
+    spec:
+      containers:
+      - name: httpd
+        image: ghcr.io/larry461/cis-92:milestone-5.2
+        ports:
+        - containerPort: 80
+        env:
+        - name: PORT    
+          value: '80'
+        - name: SECRET_KEY
+          value: 'This is a random secret key'
+        - name: DB_NAME 
+          value: "mysite"
+        - name: DB_USER 
+          value: "postgres"
+        - name: DB_PASSWORD 
+          value: "django"
+        - name: DB_HOST 
+          value: "postgres"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"   
+        livenessProbe:
+          httpGet:
+            path: /polls/
+            port: 80

@@ -25,14 +25,16 @@ spec:
           value: '80'
         - name: SECRET_KEY
           value: 'This is a random secret key'
-        - name: DB_NAME 
-          value: "mysite"
-        - name: DB_USER 
+        - name: DB_ENGINE
           value: "postgres"
-        - name: DB_PASSWORD 
+        - name: DB_NAME
           value: "django"
-        - name: DB_HOST 
-          value: "postgres"
+        - name: DB_USER
+          value: "django"
+        - name: DB_PASSWORD
+          value: "django"
+        - name: DB_HOST
+          value: "104.198.108.23"
         resources:
           requests:
             memory: "128Mi"
